@@ -1,0 +1,35 @@
+VERIFICACIÓN LOCAL DEL PROYECTO
+===============================
+
+- Dataset raw: 28,313 filas
+- Dataset después de eliminar duplicados: 28,016 filas
+- Duplicados eliminados: 297
+- Tasa positiva FLAG_SS: 2.6699%
+- Tests: 13/13 aprobados
+- Cobertura observada en la ejecución de verificación: ~52% (src + api)
+- Pipeline de entrenamiento ejecutado correctamente
+- Quality gate: APROBADO
+
+Métricas del artefacto incluido:
+- Accuracy: 0.9795
+- Precision: 0.8095
+- Recall: 0.3036
+- F1: 0.4416
+- ROC-AUC: 0.7654
+- PR-AUC: 0.3722
+
+Mejores parámetros:
+- selector__k: 25
+- model__n_estimators: 80
+- model__max_depth: None
+- model__min_samples_leaf: 1
+- model__class_weight: None
+
+FastAPI verificado con TestClient:
+- GET /health: HTTP 200
+- POST /predict: HTTP 200 con el modelo real incluido
+
+No se pudo ejecutar localmente:
+- flake8: no está instalado en el runtime de verificación y no hay acceso a Internet para instalarlo.
+- Docker build: Docker CLI no está disponible en el runtime de verificación.
+- MLflow/Model Registry: MLflow no está instalado en el runtime de verificación; el código y dependencias están incluidos para ejecutarlo en GitHub Actions/local tras `pip install -r requirements.txt`.

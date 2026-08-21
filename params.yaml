@@ -1,0 +1,10 @@
+training:
+  random_state: 42
+  test_size: 0.30
+  n_iter: 6
+  cv_splits: 3
+  refit_metric: recall
+quality_gate:
+  min_recall: 0.25
+  min_roc_auc: 0.73
+  min_f1: 0.30

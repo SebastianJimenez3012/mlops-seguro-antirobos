@@ -1,0 +1,37 @@
+stages:
+  prepare:
+    cmd: python -m src.prepare_data
+    deps:
+      - data/raw/DS_Seguro_Antirobos.csv
+      - src/config.py
+      - src/data_loader.py
+      - src/prepare_data.py
+    outs:
+      - data/processed/seguro_antirobos_clean.csv
+
+  train:
+    cmd: python -m src.train_pipeline --n-iter 6 --cv-splits 3
+    deps:
+      - data/processed/seguro_antirobos_clean.csv
+      - src/config.py
+      - src/preprocessing.py
+      - src/evaluate.py
+      - src/train_pipeline.py
+    params:
+      - training.random_state
+      - training.test_size
+      - training.n_iter
+      - training.cv_splits
+    outs:
+      - artifacts/model_pipeline.joblib
+      - artifacts/best_params.json
+      - artifacts/confusion_matrix.png
+      - artifacts/roc_curve.png
+    metrics:
+      - artifacts/metrics.json:
+          cache: false
+
+  validate:
+    cmd: python -m src.validate_model
+    deps:
+      - artifacts/metrics.json

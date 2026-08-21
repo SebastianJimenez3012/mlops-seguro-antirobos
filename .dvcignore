@@ -1,0 +1,4 @@
+# Archivos que DVC puede ignorar
+mlruns/
+.pytest_cache/
+__pycache__/

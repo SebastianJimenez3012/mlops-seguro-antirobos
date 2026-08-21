@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+.env
+mlruns/
+mlflow.db
+.DS_Store
+# data/processed y artifacts se regeneran; se dejan fuera de Git salvo .gitkeep
+# Descomentar si desea versionar solo mediante DVC:
+# data/raw/DS_Seguro_Antirobos.csv

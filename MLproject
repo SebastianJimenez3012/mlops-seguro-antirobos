@@ -1,0 +1,14 @@
+name: SeguroAntirobosMLOps
+
+entry_points:
+  prepare:
+    command: "python -m src.prepare_data"
+  train:
+    parameters:
+      n_iter: {type: int, default: 6}
+      cv_splits: {type: int, default: 3}
+    command: "python -m src.train_pipeline --n-iter {n_iter} --cv-splits {cv_splits}"
+  validate:
+    command: "python -m src.validate_model"
+  serve:
+    command: "uvicorn api.app:app --host 0.0.0.0 --port 8000"
