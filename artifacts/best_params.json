@@ -1,0 +1,7 @@
+{
+  "selector__k": 25,
+  "model__n_estimators": 80,
+  "model__min_samples_leaf": 1,
+  "model__max_depth": null,
+  "model__class_weight": null
+}
