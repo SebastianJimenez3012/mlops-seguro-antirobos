@@ -231,9 +231,21 @@ Makefile
 requirements.txt
 ```
 
+## 14. Entrega en GitHub
 
+Crear el repositorio y subirlo:
 
+```bash
+git init
+git add .
+git commit -m "Proyecto final MLOps seguro antirrobos"
+git branch -M main
+git remote add origin https://github.com/TU_USUARIO/mlops-seguro-antirobos.git
+git push -u origin main
+```
 
-## 14. Fuente del caso
+Después compartir el repositorio con el usuario **`jcbf08`** y reemplazar el enlace en `link_repositorio.txt`.
+
+## 15. Fuente del caso
 
 Los documentos originales del caso se preservan en `docs/` y el notebook de análisis en `notebooks/` para trazabilidad académica.
