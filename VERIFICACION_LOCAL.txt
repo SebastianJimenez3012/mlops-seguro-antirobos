@@ -29,7 +29,4 @@ FastAPI verificado con TestClient:
 - GET /health: HTTP 200
 - POST /predict: HTTP 200 con el modelo real incluido
 
-No se pudo ejecutar localmente:
-- flake8: no está instalado en el runtime de verificación y no hay acceso a Internet para instalarlo.
-- Docker build: Docker CLI no está disponible en el runtime de verificación.
-- MLflow/Model Registry: MLflow no está instalado en el runtime de verificación; el código y dependencias están incluidos para ejecutarlo en GitHub Actions/local tras `pip install -r requirements.txt`.
+
